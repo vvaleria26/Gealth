@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Gealth</string>
+
+    <string-array name="actividad_levels">
+        <item>Muy Bajo</item>
+        <item>Bajo</item>
+        <item>Moderado</item>
+        <item>Alto</item>
+    </string-array>
+</resources>

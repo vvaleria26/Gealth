@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.nutricionapp.HomeActivity">
+
+    <!-- Logo de la app -->
+    <!-- Asegúrate de tener el logo en res/drawable -->
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Nombre de la app -->
+
+    <!-- Sección de recetas recomendadas -->
+
+    <!-- Recetas recomendadas (imagen o texto representativo) -->
+    <!-- Reemplaza por imagen real -->
+    app:layout_constraintTop_toBottomOf="@id/recipesTitleTextView"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+    <!-- Barra de navegación con 4 botones en la parte inferior -->
+
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="137dp"
+        android:layout_height="112dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/appNameTextView"
+        android:layout_width="154dp"
+        android:layout_height="67dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Gealth"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.743"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <TextView
+        android:id="@+id/recipesTitleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recetas Recomendadas"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.173"
+        app:layout_constraintStart_toStartOf="@+id/recipeImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.268" />
+
+    <ImageView
+        android:id="@+id/recipeImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/receta2"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="224dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomNavigationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/colorPrimary"
+        android:orientation="horizontal">
+
+        <!-- Botón Home -->
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:text="Home"
+            app:layout_constraintEnd_toStartOf="@id/diagnosticButton"
+            app:layout_constraintStart_toStartOf="parent"
+            android:onClick="onHomeClicked" />
+
+        <!-- Botón Diagnóstico -->
+        <Button
+            android:id="@+id/diagnosticButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:text="Diagnóstico"
+            app:layout_constraintEnd_toStartOf="@id/recommendationsButton"
+            app:layout_constraintStart_toEndOf="@id/homeButton"
+            android:onClick="onDiagnosticClicked" />
+
+        <!-- Botón Recomendaciones -->
+        <Button
+            android:id="@+id/recommendationsButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:text="Recomendaciones"
+            app:layout_constraintEnd_toStartOf="@id/settingsButton"
+            app:layout_constraintStart_toEndOf="@id/diagnosticButton"
+            android:onClick="onRecommendationsClicked" />
+
+        <!-- Botón Configuración -->
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:text="Configuración"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/recommendationsButton"
+            android:onClick="onSettingsClicked" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

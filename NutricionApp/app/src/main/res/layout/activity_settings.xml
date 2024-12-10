@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Título de la página de configuración -->
+    <TextView
+        android:id="@+id/settingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Configuración"
+        android:textSize="24sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="24dp"/>
+
+    <!-- Opción para modificar el perfil -->
+    <TextView
+        android:id="@+id/profileTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Modificar Perfil"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Opción para activar/desactivar notificaciones -->
+    <CheckBox
+        android:id="@+id/notificationCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Activar notificaciones"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Términos y condiciones -->
+    <TextView
+        android:id="@+id/termsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Términos y Condiciones"
+        android:textSize="18sp"
+        android:padding="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?android:attr/selectableItemBackground"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botón para eliminar cuenta -->
+    <Button
+        android:id="@+id/deleteAccountButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar Cuenta"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botón para cerrar sesión -->
+    <Button
+        android:id="@+id/logoutButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cerrar Sesión" />
+
+
+        <!-- Botón Home -->
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Home"
+            android:onClick="goToHome"/>
+
+        <!-- Botón Diagnóstico -->
+        <Button
+            android:id="@+id/diagnosticButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Diagnóstico"
+            android:onClick="goToDiagnostico"/>
+
+</LinearLayout>
