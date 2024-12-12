@@ -1,145 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/colorBackground">
+    android:padding="16dp">
 
     <!-- Botón de regreso -->
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="← Regresar"
-        android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp"
-        android:onClick="onBackPressed" />
 
     <!-- Título de la pantalla -->
+
+    <!-- Edad -->
+
+    <!-- Peso -->
+
+    <!-- Altura -->
+
+    <!-- Nivel de Actividad Física -->
+
     <TextView
         android:id="@+id/diagnosticTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
         android:text="Diagnóstico Nutricional"
-        android:textSize="24sp"
-        android:textColor="@color/colorPrimary"
         android:textAlignment="center"
-        android:layout_marginBottom="32dp" />
+        android:textColor="@color/colorPrimary"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/edadTextView"
+        tools:layout_editor_absoluteX="16dp" />
 
-    <!-- Edad -->
     <TextView
         android:id="@+id/edadTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Edad:"
+        android:textColor="@color/colorPrimary"
         android:textSize="16sp"
-        android:textColor="@color/colorPrimary" />
+        app:layout_constraintBottom_toTopOf="@+id/edadEditText"
+        tools:layout_editor_absoluteX="16dp" />
 
     <EditText
         android:id="@+id/edadEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="28dp"
         android:hint="Ingresa tu edad"
         android:inputType="number"
-        android:layout_marginBottom="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/pesoTextView"
+        tools:layout_editor_absoluteX="16dp" />
 
-    <!-- Peso -->
     <TextView
         android:id="@+id/pesoTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Peso (kg):"
+        android:textColor="@color/colorPrimary"
         android:textSize="16sp"
-        android:textColor="@color/colorPrimary" />
+        app:layout_constraintBottom_toTopOf="@+id/pesoEditText"
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/pesoEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
         android:hint="Ingresa tu peso"
         android:inputType="numberDecimal"
-        android:layout_marginBottom="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/alturaTextView"
+        tools:layout_editor_absoluteX="16dp" />
 
-    <!-- Altura -->
     <TextView
         android:id="@+id/alturaTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Altura (cm):"
+        android:textColor="@color/colorPrimary"
         android:textSize="16sp"
-        android:textColor="@color/colorPrimary" />
+        app:layout_constraintBottom_toTopOf="@+id/alturaEditText"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <!-- Botón de Diagnóstico -->
 
     <EditText
         android:id="@+id/alturaEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="44dp"
         android:hint="Ingresa tu altura"
         android:inputType="numberDecimal"
-        android:layout_marginBottom="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/actividadTextView"
+        tools:layout_editor_absoluteX="16dp" />
 
-    <!-- Nivel de Actividad Física -->
     <TextView
         android:id="@+id/actividadTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nivel de Actividad Física:"
+        android:textColor="@color/colorPrimary"
         android:textSize="16sp"
-        android:textColor="@color/colorPrimary" />
+        app:layout_constraintBottom_toTopOf="@+id/actividadSpinner"
+        tools:layout_editor_absoluteX="16dp" />
 
     <Spinner
         android:id="@+id/actividadSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="84dp"
         android:entries="@array/actividad_levels"
-        android:layout_marginBottom="32dp" />
+        app:layout_constraintBottom_toTopOf="@+id/diagnosticoButton"
+        tools:layout_editor_absoluteX="16dp" />
 
-    <!-- Botón de Diagnóstico -->
     <Button
         android:id="@+id/diagnosticoButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Obtener Diagnóstico"
+        android:layout_marginBottom="44dp"
         android:backgroundTint="@color/colorPrimary"
+        android:text="Obtener Diagnóstico"
         android:textColor="@android:color/white"
-        android:layout_marginBottom="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Barra de Navegación -->
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomNavigationLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:weightSum="4"
-        android:background="#f2f2f2">
-
-        <Button
-            android:id="@+id/homeButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Inicio" />
-
-        <Button
-            android:id="@+id/diagnosticButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Diagnóstico" />
+        android:layout_height="69dp"
+        android:background="#C1D893"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/recommendationsButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Recomendaciones" />
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/recommendations_icon"
+            app:iconGravity="textTop"
+            app:iconSize="44dp"
+            app:layout_constraintEnd_toStartOf="@id/settingsButton"
+            app:layout_constraintStart_toEndOf="@id/diagnosticButton"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/home_icon"
+            app:iconGravity="textTop"
+            app:iconSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/diagnosticButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/diagnosticButton"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/diagnostico_icon"
+            app:iconGravity="textTop"
+            app:iconSize="30dp"
+            app:layout_constraintEnd_toStartOf="@id/recommendationsButton"
+            app:layout_constraintStart_toEndOf="@id/homeButton"
+            tools:layout_editor_absoluteY="1dp" />
 
         <Button
             android:id="@+id/settingsButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Configuración" />
-    </LinearLayout>
-</LinearLayout>
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/settings_icon"
+            app:iconGravity="textTop"
+            app:iconSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/recommendationsButton"
+            tools:layout_editor_absoluteY="0dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Barra de Navegación -->
+</androidx.constraintlayout.widget.ConstraintLayout>

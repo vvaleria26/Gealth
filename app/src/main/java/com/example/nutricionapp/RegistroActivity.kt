@@ -1,5 +1,6 @@
 package com.example.nutricionapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -42,6 +43,11 @@ class RegistroActivity : AppCompatActivity() {
                 // Si alguno de los campos está vacío
                 Toast.makeText(this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show()
             }
+        }
+        val volverButton = findViewById<Button>(R.id.volverButton)
+
+        volverButton.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java) // Actividad principal
         }
     }
 }

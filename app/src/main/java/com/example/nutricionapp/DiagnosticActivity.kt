@@ -23,12 +23,6 @@ class DiagnosticActivity : AppCompatActivity() {
         val actividadSpinner: Spinner = findViewById(R.id.actividadSpinner)
         val diagnosticButton: Button = findViewById(R.id.diagnosticoButton)
 
-        // Botón de regreso
-        val backButton: Button = findViewById(R.id.backButton)
-        backButton.setOnClickListener {
-            finish() // Regresa a la actividad anterior
-        }
-
         // Botones de navegación
         findViewById<Button>(R.id.homeButton).setOnClickListener {
             startActivity(Intent(this, HomeActivity::class.java))

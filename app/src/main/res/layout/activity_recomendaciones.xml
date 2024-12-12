@@ -7,6 +7,69 @@
     tools:context="com.example.nutricionapp.RecomendacionesActivity">
 
     <!-- Título de la página -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomNavigationLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#C1D893"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/recommendationsButton"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/recommendations_icon"
+            app:iconGravity="textTop"
+            app:iconSize="44dp"
+            app:layout_constraintEnd_toStartOf="@id/settingsButton"
+            app:layout_constraintStart_toEndOf="@id/diagnosticButton"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/home_icon"
+            app:iconGravity="textTop"
+            app:iconSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/diagnosticButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/diagnosticButton"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/diagnostico_icon"
+            app:iconGravity="textTop"
+            app:iconSize="30dp"
+            app:layout_constraintEnd_toStartOf="@id/recommendationsButton"
+            app:layout_constraintStart_toEndOf="@id/homeButton"
+            tools:layout_editor_absoluteY="1dp" />
+
+        <Button
+            android:id="@+id/settingsButton"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/settings_icon"
+            app:iconGravity="textTop"
+            app:iconSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/recommendationsButton"
+            tools:layout_editor_absoluteY="0dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <TextView
         android:id="@+id/recomendacionesTitle"
         android:layout_width="wrap_content"
@@ -31,16 +94,50 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- Recomendación de tomar agua -->
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/motivationalQuote"
+        app:layout_constraintTop_toBottomOf="@+id/exerciseVideo"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="0dp">
+
+        <Button
+            android:id="@+id/forwardButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adelantar 5s" />
+
+        <Button
+            android:id="@+id/playPauseButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play"
+            app:icon="@drawable/playpause" />
+
+        <Button
+            android:id="@+id/rewindButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retroceder 5s" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/waterRecommendation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="Toma al menos 8 vasos de agua al día."
         android:textSize="18sp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/exerciseVideo"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
     <!-- Frase motivacional -->
     <TextView
@@ -67,51 +164,5 @@
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <!-- Barra de navegación -->
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#f2f2f2"
-        android:gravity="center"
-        android:weightSum="4"
-        android:layout_marginTop="20dp"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <!-- Botón Home -->
-        <Button
-            android:id="@+id/homeButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Home"
-            android:onClick="goToHome"/>
-
-        <!-- Botón Diagnóstico -->
-        <Button
-            android:id="@+id/diagnosticButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Diagnóstico"
-            android:onClick="goToDiagnostico"/>
-
-        <!-- Botón Recomendaciones -->
-        <Button
-            android:id="@+id/recommendationsButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Recomendaciones"
-            android:onClick="goToRecomendaciones"/>
-
-        <!-- Botón Configuración -->
-        <Button
-            android:id="@+id/settingsButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Configuración"
-            android:onClick="goToConfiguracion"/>
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

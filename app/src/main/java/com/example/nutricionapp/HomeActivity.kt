@@ -34,23 +34,21 @@ class HomeActivity : AppCompatActivity() {
         recipesRecyclerView.layoutManager = LinearLayoutManager(this)
         recipesRecyclerView.adapter = adapter
 
-
         // Navegación
         homeButton.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java) // Actividad principal
-            startActivity(intent)
+            val intent = Intent(this, HomeActivity::class.java) // Actividad principal
+            if (!(this is HomeActivity)) {
+                startActivity(intent)
+            }
         }
-
         diagnosticButton.setOnClickListener {
             val intent = Intent(this, DiagnosticActivity::class.java) // Actividad de diagnóstico
             startActivity(intent)
         }
-
         recommendationsButton.setOnClickListener {
             val intent = Intent(this, RecomendacionesActivity::class.java) // Actividad de recomendaciones
             startActivity(intent)
         }
-
         settingsButton.setOnClickListener {
             val intent = Intent(this, SettingsActivity::class.java) // Actividad de configuración
             startActivity(intent)

@@ -1,32 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomNavigationLayout"
+        tools:layout_editor_absoluteX="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="#C1D893"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/recommendationsButton"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/recommendations_icon"
+            app:iconGravity="textTop"
+            app:iconSize="44dp"
+            app:layout_constraintEnd_toStartOf="@id/settingsButton"
+            app:layout_constraintStart_toEndOf="@id/diagnosticButton" />
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/home_icon"
+            app:iconGravity="textTop"
+            app:iconSize="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/diagnosticButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/diagnosticButton"
+            tools:layout_editor_absoluteY="1dp"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/diagnostico_icon"
+            app:iconGravity="textTop"
+            app:iconSize="30dp"
+            app:layout_constraintEnd_toStartOf="@id/recommendationsButton"
+            app:layout_constraintStart_toEndOf="@id/homeButton" />
+
+        <Button
+            android:id="@+id/settingsButton"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_width="69dp"
+            android:layout_height="69dp"
+            android:background="@android:color/transparent"
+            android:paddingTop="12dp"
+            app:icon="@drawable/settings_icon"
+            app:iconGravity="textTop"
+            app:iconSize="30dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/recommendationsButton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <EditText
         android:id="@+id/editUsername"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:hint="Username"
+        android:inputType="text"
         android:padding="16dp"
-        android:inputType="text"/>
+        app:layout_constraintBottom_toTopOf="@+id/editEmail"
+        tools:layout_editor_absoluteX="16dp" />
 
     <EditText
         android:id="@+id/editEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="52dp"
         android:hint="Email"
+        android:inputType="textEmailAddress"
         android:padding="16dp"
-        android:inputType="textEmailAddress"/>
+        app:layout_constraintBottom_toTopOf="@+id/saveProfileButton"
+        tools:layout_editor_absoluteX="16dp" />
 
     <Button
         android:id="@+id/saveProfileButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="220dp"
+        android:layout_marginBottom="280dp"
         android:text="Guardar Cambios"
-        android:layout_gravity="center"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+    <TextView
+        android:id="@+id/recomendacionesTitle2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Editar Perfil"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/editUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.4" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
